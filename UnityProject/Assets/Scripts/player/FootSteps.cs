@@ -11,6 +11,7 @@ public class FootSteps : MonoBehaviour {
 	public float stepTimer = 0f;
 	public float walkStepCool = 0.55f;
 	public float sprintStepCool = 0.4f;
+	private AudioClip lastClipPlayed;
 
 
 	// Use this for initialization
@@ -19,6 +20,9 @@ public class FootSteps : MonoBehaviour {
 		AudioSource[] srcs = GetComponents<AudioSource>();
 		if(srcs.Length > 0)
 			audio_source = srcs[0];
+		if(footsteps.Length > 0) {
+			lastClipPlayed = footsteps[0];
+		}
 	}
 	
 	// Update is called once per frame
@@ -35,18 +39,15 @@ public class FootSteps : MonoBehaviour {
 			stepTimer = 0;
 	}
 
-	/*void PlayStep () {
-		step = false;
-		audio.clip = footsteps[Random.Range(0,footsteps.Length)];
-		audio.Play();
-		yield return new WaitForSeconds(0.45f);
-		step = true;
-	}*/
 
 	void stepAudio () {
 		if(stepTimer == 0) {
 			audio_source.clip = footsteps[Random.Range(0,footsteps.Length)];
+			while(audio_source.clip == lastClipPlayed) {
+				audio_source.clip = footsteps[Random.Range(0,footsteps.Length)];
+			}
 			audio_source.Play ();
+			lastClipPlayed = audio_source.clip;
 			if(Input.GetButton ("Sprint"))
 				stepTimer = sprintStepCool;
 			else
