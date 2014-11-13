@@ -412,6 +412,9 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 02a736596ac0fcd48aaa42bb42de3a83, type: 3}
   - {fileID: 8300000, guid: 7bd7d6b6ce8c5584ab6c219aa2818df6, type: 3}
   - {fileID: 8300000, guid: b455a6f185f532d4b9ea137ded48f6b2, type: 3}
+  - {fileID: 8300000, guid: 45b28ffb046cefb40b74ddacbd450ac7, type: 3}
+  - {fileID: 8300000, guid: 34c9bc04b64880a49a8c72789c3fb80b, type: 3}
+  - {fileID: 8300000, guid: 3727d60f2ab1e5345af70fd302d099a9, type: 3}
   stepTimer: 0
   walkStepCool: .550000012
   sprintStepCool: .400000006
@@ -463,7 +466,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 833ff1bb13459495ca3b06a57c61587c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  move_speed: 4
+  move_speed: 5
   sprint_speed: 8
   jump_speed: 5
   landSounds:
