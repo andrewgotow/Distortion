@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-//[RequireComponent (typeof (g_FPController))]
+[RequireComponent (typeof (FPController))]
 public class FPCamera : MonoBehaviour {
 
 	// These properties are used to bounce the main camera around.
@@ -13,7 +13,8 @@ public class FPCamera : MonoBehaviour {
 	private Vector3 _position_offset;			// A value to keep track of the local position of the camera (straight interpolation causes unwanted side effects)
 
 	// This handles the imapact effects.
-	public float _max_offset_velocity = 5.0f;
+	public float _max_offset = 0.5f;
+	public float _max_offset_velocity = 20.0f;
 
 	// And these handle orientation
 	public Vector3 _rotation_target;			// The desired rotation of the camera (global)
@@ -27,10 +28,12 @@ public class FPCamera : MonoBehaviour {
 	public float _input_rotateY_scale = 4.0f;
 	public float _input_rotateX_scale = 4.0f;
 
+	public CharacterController characterController;
 
 	void Start () {
-	//	_controller = GetComponent<g_FPController>();
+		this.characterController = this.GetComponent<CharacterController>();
 	}
+
 
 	void Update () {		
 		transform.Rotate( 0, Input.GetAxis( _input_axis_rotateY ) * _input_rotateY_scale, 0 );
@@ -39,9 +42,11 @@ public class FPCamera : MonoBehaviour {
 		_rotation_target.x = Mathf.Clamp( _rotation_target.x + -Input.GetAxis( _input_axis_rotateX ) * _input_rotateX_scale, -80, 80 );
 	}
 
-	void OnCollisionEnter(Collision collision) {
-		_position_velocity += transform.InverseTransformDirection( Vector3.ClampMagnitude( collision.relativeVelocity, _max_offset_velocity ) );
 
+	void OnControllerColliderHit(ControllerColliderHit collision) {
+		if ( !this.characterController.isGrounded ) 
+			_position_velocity.y -= this.characterController.velocity.y;
+		_position_velocity = Vector3.ClampMagnitude( _position_velocity, _max_offset_velocity );
 	}
 	
 	void LateUpdate () {
@@ -50,7 +55,7 @@ public class FPCamera : MonoBehaviour {
 		// Apply the translational spring force			
 		_position_velocity += _position_offset * _position_spring;
 		// Update the position offset
-		_position_offset += -_position_velocity * Time.deltaTime;
+		_position_offset = Vector3.ClampMagnitude( _position_offset - _position_velocity * Time.deltaTime, _max_offset );
 		// Update the camera transform.
 		_camera.position = transform.TransformPoint( _position_target + _position_offset );
 

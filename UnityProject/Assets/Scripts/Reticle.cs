@@ -9,8 +9,8 @@ public class Reticle : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		position = new Rect((Screen.width-texture.width)/2,(Screen.height-texture.height)/2,texture.width,texture.height);
-		Screen.showCursor = false;
-		Screen.lockCursor = true;
+		//Screen.showCursor = false;
+		//Screen.lockCursor = true;
 	}
 	
 	// Update is called once per frame

@@ -7,7 +7,7 @@ public abstract class DeformationEffector : MonoBehaviour {
 		DeformationManager.instance.AddEffector( this );
 	}
 
-	public void OnDestroy () {
+	public virtual void OnDestroy () {
 		if ( DeformationManager.instance != null )
 			DeformationManager.instance.RemoveEffector( this );
 	}
@@ -20,7 +20,7 @@ public abstract class DeformationEffector : MonoBehaviour {
 		return true;
 	} 
 
-	public virtual Vector3 TransformVertex ( Vector3 ms_position, Vector3 vertex ) {
+	public virtual Vector3 TransformVertex ( Vector3 ms_position, Vector3 vertex, float weight = 1.0f ) {
 		return vertex;
 	}
 

@@ -1,12 +1,11 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-[RequireComponent (typeof (FPController))]
 public class FootSteps : MonoBehaviour {
 	public AudioClip[] footsteps;
 	private AudioSource audio_source;
 	//private bool step = true;
-	private FPController charController;
+	private CharacterController charController;
 	//public float audioStepLengthWalk = 0.45f;
 	//public float audioStepLengthSprint = 0.4f;
 	public float stepTimer = 0f;
@@ -16,7 +15,7 @@ public class FootSteps : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		charController = GetComponent<FPController>();
+		charController = GetComponent<CharacterController>();
 		AudioSource[] srcs = GetComponents<AudioSource>();
 		if(srcs.Length > 0)
 			audio_source = srcs[0];
@@ -24,7 +23,7 @@ public class FootSteps : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if( charController.isGrounded() ) {
+		if( charController.isGrounded ) {
 			if(Input.GetAxis ("Horizontal") > 0 || Input.GetAxis ("Horizontal") < 0 || Input.GetAxis ("Vertical") > 0 || Input.GetAxis ("Vertical") < 0) {
 				//StartCoroutine(PlayStep ());
 				stepAudio ();

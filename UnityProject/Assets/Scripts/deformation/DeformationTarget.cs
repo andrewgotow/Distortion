@@ -23,7 +23,7 @@ public class DeformableMesh {
 
 	// we want to ignore any vertices which are intersecting a solid wall, so that objects don't "pull away" from walls.
 	// let's build a list of all effected vertex indices, and only update those.
-	private List<int> effectedVertices = new List<int>();
+	private float[] vertexWeights;
 
 	// a multiplier for the vertex offsets. This parameter is directly applied to the "Distortion scale"
 	// parameter, used in the distortion shader.
@@ -39,7 +39,7 @@ public class DeformableMesh {
 
 		this.baseMesh = CopyMesh( meshFilter.mesh );
 		this.InitVertexColorAttributes();
-		this.BuildEffectedVertexList();
+		this.BuildVertexWeightList();
 		this.ResetMesh();
 	}
 
@@ -78,14 +78,21 @@ public class DeformableMesh {
 		this.baseMesh.colors32 = colors32;
 	}
 
-	private void BuildEffectedVertexList () {
-		effectedVertices = new List<int>();
-		// we want to iterate through each vertex in the object. If that vertex is "touching" something els
-		// don't modify it.
+	private void BuildVertexWeightList () {
+		this.vertexWeights = new float[ this.baseMesh.vertices.Length ];
+		// initialize the weight list to 1.
+		for ( int i = 0; i < this.vertexWeights.Length; i ++ ) { this.vertexWeights[i] = 1; }
+
+		// we want to iterate through each vertex in the object. If that vertex is "touching" something else
+		// set its weight to zero.
+		// NOTE: I tried a few "vertex blending" approaches to weight generation, and these had some problems, mainly
+		// that they were SLOW AS HEEEEEELL. I ended up going with this solution which checks a bunch of bounding spheres
+		// and sets the weight that way instead.
 		for ( int index = 0; index < this.baseMesh.vertices.Length; index ++ ) {
 			Vector3 position = this.transform.TransformPoint( this.baseMesh.vertices[index] );
-			if ( !Physics.CheckSphere( position, 0.01f, Physics.AllLayers^(1<<LayerMask.NameToLayer("Deformable")) ) ) {
-				effectedVertices.Add( index );
+			for ( float range = 2.0f; range > 0; range -= 0.1f ) {
+				if ( Physics.CheckSphere( position, range, Physics.AllLayers^(1<<LayerMask.NameToLayer("Deformable")) ) )
+					vertexWeights[index] = range / 2.0f;
 			}
 		}
 	}
@@ -106,13 +113,20 @@ public class DeformableMesh {
 			Color32[] colors32 = this.baseMesh.colors32;
 
 			//for ( int index = 0; index < vertices.Length; index ++ ) {
-			foreach ( int index in this.effectedVertices ) {
+			for ( int index = 0; index < this.baseMesh.vertices.Length; index ++ ) {
 				// and transform each vertex.
 				Vector3 displacement = Vector3.zero;
 				if ( effector.VertexInRange( ms_position, vertices[index] ) ) {
-					displacement = -vertices[index];
-					vertices[ index ] = effector.TransformVertex( ms_position, vertices[ index ] );
-					displacement += vertices[index];
+					Vector3 newPos = effector.TransformVertex( ms_position, vertices[ index ], this.vertexWeights[index] );
+					// we don't want the mesh to pull through surfaces, so let's do a raycast from the old position, to the new one.
+					// if the ray hits something, then we clamp the deformation.
+					Vector3 castVec = newPos - vertices[index];
+					RaycastHit castHit;
+					if ( Physics.Raycast( this.transform.TransformPoint(vertices[index]), this.transform.TransformDirection(castVec), out castHit, castVec.magnitude, Physics.AllLayers^(1<<LayerMask.NameToLayer("Deformable")) ) ) {
+						newPos = this.transform.InverseTransformPoint( castHit.point );
+					}
+					displacement = newPos - vertices[index];
+					vertices[index] = newPos;
 				}
 
 				// invert the displacement. 
@@ -193,7 +207,7 @@ public class DeformationTarget : MonoBehaviour {
 				this.mesh.DeformMesh( effector );
 			}
 		//}
-
+		/*
 		// now, use our list of intersecting objects to push other objects out of the geometry.
 		foreach ( KeyValuePair<int,Collision> collision in this.trackedCollisions ) {
 			// we want to move the object out along its incoming velocity vector until we hit the new surface. To do this,
@@ -207,7 +221,7 @@ public class DeformationTarget : MonoBehaviour {
 				// then, set the position of the colliding object to the new contact point, applying the offset from the initial contact.
 				collision.Value.transform.position = hit.point + contact_offset;
 			}
-		}
+		}*/
 	}
 
 }
