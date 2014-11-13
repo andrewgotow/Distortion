@@ -1,0 +1,112 @@
+fileFormatVersion: 2
+guid: 7fa7bd183ed333e4fb529766c20421d1
+ModelImporter:
+  serializedVersion: 16
+  fileIDToRecycleName:
+    100000: Arm_camera_2
+    100002: Base_2
+    100004: Base_bar
+    100006: Base_bar_end1
+    100008: Base_bar_end2
+    100010: Base_stand_1
+    100012: Base_stand_2
+    100014: Camera_2
+    100016: //RootNode
+    100018: Gun_2
+    100020: wire_camera_2
+    400000: Arm_camera_2
+    400002: Base_2
+    400004: Base_bar
+    400006: Base_bar_end1
+    400008: Base_bar_end2
+    400010: Base_stand_1
+    400012: Base_stand_2
+    400014: Camera_2
+    400016: //RootNode
+    400018: Gun_2
+    400020: wire_camera_2
+    2300000: Arm_camera_2
+    2300002: Base_2
+    2300004: Base_bar
+    2300006: Base_bar_end1
+    2300008: Base_bar_end2
+    2300010: Base_stand_1
+    2300012: Base_stand_2
+    2300014: Camera_2
+    2300016: Gun_2
+    2300018: wire_camera_2
+    3300000: Arm_camera_2
+    3300002: Base_2
+    3300004: Base_bar
+    3300006: Base_bar_end1
+    3300008: Base_bar_end2
+    3300010: Base_stand_1
+    3300012: Base_stand_2
+    3300014: Camera_2
+    3300016: Gun_2
+    3300018: wire_camera_2
+    4300000: Base_2
+    4300002: Base_stand_1
+    4300004: Gun_2
+    4300006: wire_camera_2
+    4300008: Camera_2
+    4300010: Arm_camera_2
+    4300012: Base_bar
+    4300014: Base_bar_end1
+    4300016: Base_bar_end2
+    4300018: Base_stand_2
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: .00999999978
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  additionalBone: 0
+  userData: 

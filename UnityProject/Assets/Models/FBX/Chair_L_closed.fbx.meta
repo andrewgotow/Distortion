@@ -1,0 +1,172 @@
+fileFormatVersion: 2
+guid: 0cd0a89b01523e348a49c5daa29162f8
+ModelImporter:
+  serializedVersion: 16
+  fileIDToRecycleName:
+    100000: bend1Handle1
+    100002: bend1Handle1 1
+    100004: bend4Handle
+    100006: chair
+    100008: Chair_back
+    100010: //RootNode
+    100012: Chair_L_open
+    100014: Chair_L_open 1
+    100016: Chair_L_open_Desk_comp_table_R_arm
+    100018: Chair_L_open_Desk_comp_table_R_arm1
+    100020: Desk_comp_table
+    100022: L_arm
+    100024: L_bend
+    100026: Laptop_bottom
+    100028: Laptop_top
+    100030: pCube1
+    100032: pCube4
+    100034: pCylinder2
+    100036: pCylinder4
+    100038: pCylinder4 1
+    100040: pCylinder7
+    100042: pCylinder8
+    100044: polySurface1
+    100046: polySurface2
+    100048: polySurface4
+    100050: polySurface5
+    100052: polySurface5 1
+    100054: R_arm
+    100056: R_arm_attach
+    100058: R_bend
+    100060: Stand
+    100062: transform1
+    100064: transform10
+    100066: transform2
+    100068: transform3
+    100070: transform4
+    100072: transform5
+    100074: transform6
+    100076: transform7
+    100078: transform8
+    100080: transform9
+    400000: bend1Handle1
+    400002: bend1Handle1 1
+    400004: bend4Handle
+    400006: chair
+    400008: Chair_back
+    400010: //RootNode
+    400012: Chair_L_open
+    400014: Chair_L_open 1
+    400016: Chair_L_open_Desk_comp_table_R_arm
+    400018: Chair_L_open_Desk_comp_table_R_arm1
+    400020: Desk_comp_table
+    400022: L_arm
+    400024: L_bend
+    400026: Laptop_bottom
+    400028: Laptop_top
+    400030: pCube1
+    400032: pCube4
+    400034: pCylinder2
+    400036: pCylinder4
+    400038: pCylinder4 1
+    400040: pCylinder7
+    400042: pCylinder8
+    400044: polySurface1
+    400046: polySurface2
+    400048: polySurface4
+    400050: polySurface5
+    400052: polySurface5 1
+    400054: R_arm
+    400056: R_arm_attach
+    400058: R_bend
+    400060: Stand
+    400062: transform1
+    400064: transform10
+    400066: transform2
+    400068: transform3
+    400070: transform4
+    400072: transform5
+    400074: transform6
+    400076: transform7
+    400078: transform8
+    400080: transform9
+    2300000: L_arm
+    2300002: pCube1
+    2300004: pCube4
+    2300006: pCylinder2
+    2300008: pCylinder4
+    2300010: pCylinder4 1
+    2300012: pCylinder8
+    2300014: polySurface5
+    2300016: R_arm_attach
+    2300018: Stand
+    3300000: L_arm
+    3300002: pCube1
+    3300004: pCube4
+    3300006: pCylinder2
+    3300008: pCylinder4
+    3300010: pCylinder4 1
+    3300012: pCylinder8
+    3300014: polySurface5
+    3300016: R_arm_attach
+    3300018: Stand
+    4300000: pCylinder2
+    4300002: pCube1
+    4300004: pCylinder4
+    4300006: pCylinder4
+    4300008: R_arm_attach
+    4300010: pCylinder8
+    4300012: pCube4
+    4300014: L_arm
+    4300016: Stand
+    4300018: polySurface5
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: .00999999978
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  additionalBone: 0
+  userData: 
