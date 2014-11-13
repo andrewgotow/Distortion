@@ -6,10 +6,10 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/scenes/Menu.unity
+    path: Assets/Scenes/Menu.unity
   - enabled: 0
-    path: Assets/scenes/AlphaLevel.unity
+    path: Assets/Scenes/AlphaLevel.unity
   - enabled: 1
-    path: Assets/scenes/Intro.unity
+    path: Assets/Scenes/Intro.unity
   - enabled: 1
-    path: Assets/scenes/new_sandbox_v2_TOM.unity
+    path: Assets/Scenes/new_sandbox_v2_TOM.unity
