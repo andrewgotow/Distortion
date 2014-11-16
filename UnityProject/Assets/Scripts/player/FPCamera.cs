@@ -28,6 +28,8 @@ public class FPCamera : MonoBehaviour {
 	public float _input_rotateY_scale = 4.0f;
 	public float _input_rotateX_scale = 4.0f;
 
+
+	private float fall_duration = 0;
 	public CharacterController characterController;
 
 	void Start () {
@@ -40,13 +42,17 @@ public class FPCamera : MonoBehaviour {
 
 		_rotation_target.y = transform.eulerAngles.y;
 		_rotation_target.x = Mathf.Clamp( _rotation_target.x + -Input.GetAxis( _input_axis_rotateX ) * _input_rotateX_scale, -80, 80 );
+	
+		if ( !this.characterController.isGrounded ) {
+			this.fall_duration += Time.deltaTime;
+		}
 	}
 
 
 	void OnControllerColliderHit(ControllerColliderHit collision) {
-		if ( !this.characterController.isGrounded ) 
-			_position_velocity.y -= this.characterController.velocity.y;
-		_position_velocity = Vector3.ClampMagnitude( _position_velocity, _max_offset_velocity );
+		this._position_velocity.y += this.fall_duration * 2.0f;
+		this.fall_duration = 0;
+		this._position_velocity = Vector3.ClampMagnitude( _position_velocity, _max_offset_velocity );
 	}
 	
 	void LateUpdate () {
@@ -58,7 +64,6 @@ public class FPCamera : MonoBehaviour {
 		_position_offset = Vector3.ClampMagnitude( _position_offset - _position_velocity * Time.deltaTime, _max_offset );
 		// Update the camera transform.
 		_camera.position = transform.TransformPoint( _position_target + _position_offset );
-
 
 		_camera.rotation = Quaternion.Lerp( _camera.rotation, Quaternion.Euler( _rotation_target ), _rotation_speed * Time.deltaTime );
 	}

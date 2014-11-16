@@ -12,6 +12,11 @@ ModelImporter:
     100012: mesh_trim_front_v01
     100014: mesh_trimCorner_v01
     100016: mesh_wall_front_v03
+    100018: pCube1
+    100020: mesh_ramp_v01
+    100022: group
+    100024: mesh_handrail_v01
+    100026: mesh_handrailEnd_v01
     400000: //RootNode
     400002: mesh_floor_tile_v01
     400004: mesh_pipe_bundle_v01
@@ -21,6 +26,11 @@ ModelImporter:
     400012: mesh_trim_front_v01
     400014: mesh_trimCorner_v01
     400016: mesh_wall_front_v03
+    400018: pCube1
+    400020: mesh_ramp_v01
+    400022: group
+    400024: mesh_handrail_v01
+    400026: mesh_handrailEnd_v01
     2300000: mesh_floor_tile_v01
     2300002: mesh_pipe_bundle_v01
     2300004: mesh_pipe_large_v01
@@ -29,6 +39,10 @@ ModelImporter:
     2300010: mesh_trim_front_v01
     2300012: mesh_trimCorner_v01
     2300014: mesh_wall_front_v03
+    2300016: pCube1
+    2300018: mesh_ramp_v01
+    2300020: mesh_handrail_v01
+    2300022: mesh_handrailEnd_v01
     3300000: mesh_floor_tile_v01
     3300002: mesh_pipe_bundle_v01
     3300004: mesh_pipe_large_v01
@@ -37,6 +51,10 @@ ModelImporter:
     3300010: mesh_trim_front_v01
     3300012: mesh_trimCorner_v01
     3300014: mesh_wall_front_v03
+    3300016: pCube1
+    3300018: mesh_ramp_v01
+    3300020: mesh_handrail_v01
+    3300022: mesh_handrailEnd_v01
     4300000: mesh_wall_front_v03
     4300002: mesh_trim_front_v01
     4300004: mesh_floor_tile_v01
@@ -45,6 +63,10 @@ ModelImporter:
     4300010: mesh_pipe_large_v01
     4300012: mesh_pipe_largeBend_v01
     4300014: mesh_pipe_bundle_v01
+    4300016: pCube1
+    4300018: mesh_ramp_v01
+    4300020: mesh_handrail_v01
+    4300022: mesh_handrailEnd_v01
     9500000: //RootNode
   materials:
     importMaterials: 0
@@ -70,7 +92,7 @@ ModelImporter:
     addColliders: 0
     importBlendShapes: 1
     swapUVChannels: 0
-    generateSecondaryUV: 0
+    generateSecondaryUV: 1
     useFileUnits: 1
     optimizeMeshForGPU: 1
     weldVertices: 1

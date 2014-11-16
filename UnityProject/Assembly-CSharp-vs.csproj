@@ -65,6 +65,7 @@
      <Compile Include="Assets\Scripts\Reticle.cs" />
      <Compile Include="Assets\Scripts\SwitchTrigger.cs" />
      <Compile Include="Assets\Scripts\TurretMovement.cs" />
+     <None Include="Assets\Scripts\General\HologramShader.shader" />
      <None Include="Assets\Scripts\Deformation\DeformationTargetShader.shader" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

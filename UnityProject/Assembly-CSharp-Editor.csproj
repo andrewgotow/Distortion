@@ -48,6 +48,7 @@
   <ItemGroup>
      <Compile Include="Assets\Editor\GeneratePrefab.cs" />
      <Compile Include="Assets\Editor\movePivot.cs" />
+     <None Include="Assets\Scripts\General\HologramShader.shader" />
      <None Include="Assets\Scripts\Deformation\DeformationTargetShader.shader" />
  <Reference Include="UnityEditor.Graphs">
  <HintPath>/Applications/Unity/Unity.app/Contents/Frameworks/Managed/UnityEditor.Graphs.dll</HintPath>
