@@ -8,6 +8,7 @@ public class PlayerFire : MonoBehaviour {
 	public AudioClip fire_audio;
 
 	public GameObject singularityPrefab;
+	public Animator firstPersonAnimator;
 
 	// Use this for initialization
 	void Awake () {
@@ -17,12 +18,16 @@ public class PlayerFire : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if ( Input.GetButtonDown ( "Fire2" ) ) {
+			this.firstPersonAnimator.SetTrigger( "Dissipate" );
+
 			if(this._singularity != null) {
 				Destroy( this._singularity );
 			}
 		}
 
 		if ( Input.GetButtonDown ( "Fire1" ) ) {
+			this.firstPersonAnimator.SetTrigger( "Fire" );
+
 			Destroy( this._singularity );
 
 			RaycastHit hit;
