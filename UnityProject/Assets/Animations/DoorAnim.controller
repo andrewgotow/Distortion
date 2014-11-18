@@ -8,8 +8,8 @@ AnimatorController:
   m_Name: DoorAnim
   serializedVersion: 2
   m_AnimatorParameters:
-  - m_Name: doorAnim
-    m_Type: 3
+  - m_Name: openDoor
+    m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
@@ -38,8 +38,8 @@ Transition:
   m_TransitionDuration: .100000001
   m_TransitionOffset: 0
   m_Conditions:
-  - m_ConditionMode: 6
-    m_ConditionEvent: doorAnim
+  - m_ConditionMode: 1
+    m_ConditionEvent: openDoor
     m_EventTreshold: 1
     m_ExitTime: .899999976
   m_Atomic: 1
@@ -58,29 +58,9 @@ Transition:
   m_TransitionDuration: .100000001
   m_TransitionOffset: 0
   m_Conditions:
-  - m_ConditionMode: 6
-    m_ConditionEvent: doorAnim
+  - m_ConditionMode: 1
+    m_ConditionEvent: openDoor
     m_EventTreshold: 1
-    m_ExitTime: .899999976
-  m_Atomic: 1
-  m_Solo: 0
-  m_Mute: 0
-  m_CanTransitionToSelf: 0
---- !u!1101 &110159194
-Transition:
-  serializedVersion: 2
-  m_ObjectHideFlags: 3
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_Name: 
-  m_SrcState: {fileID: 110237813}
-  m_DstState: {fileID: 110200000}
-  m_TransitionDuration: .100000001
-  m_TransitionOffset: 0
-  m_Conditions:
-  - m_ConditionMode: 6
-    m_ConditionEvent: doorAnim
-    m_EventTreshold: 0
     m_ExitTime: .899999976
   m_Atomic: 1
   m_Solo: 0
@@ -98,48 +78,8 @@ Transition:
   m_TransitionDuration: .100000001
   m_TransitionOffset: 0
   m_Conditions:
-  - m_ConditionMode: 6
-    m_ConditionEvent: doorAnim
-    m_EventTreshold: 2
-    m_ExitTime: .899999976
-  m_Atomic: 1
-  m_Solo: 0
-  m_Mute: 0
-  m_CanTransitionToSelf: 0
---- !u!1101 &110181596
-Transition:
-  serializedVersion: 2
-  m_ObjectHideFlags: 3
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_Name: 
-  m_SrcState: {fileID: 110243229}
-  m_DstState: {fileID: 110200000}
-  m_TransitionDuration: .100000001
-  m_TransitionOffset: 0
-  m_Conditions:
-  - m_ConditionMode: 6
-    m_ConditionEvent: doorAnim
-    m_EventTreshold: 0
-    m_ExitTime: .899999976
-  m_Atomic: 1
-  m_Solo: 0
-  m_Mute: 0
-  m_CanTransitionToSelf: 0
---- !u!1101 &110198798
-Transition:
-  serializedVersion: 2
-  m_ObjectHideFlags: 3
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_Name: 
-  m_SrcState: {fileID: 110200000}
-  m_DstState: {fileID: 110237813}
-  m_TransitionDuration: .100000001
-  m_TransitionOffset: 0
-  m_Conditions:
-  - m_ConditionMode: 6
-    m_ConditionEvent: doorAnim
+  - m_ConditionMode: 2
+    m_ConditionEvent: openDoor
     m_EventTreshold: 2
     m_ExitTime: .899999976
   m_Atomic: 1
@@ -167,7 +107,7 @@ State:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: CloseDoor
-  m_Speed: -1
+  m_Speed: -1.75
   m_CycleOffset: 0
   m_Motions:
   - {fileID: 7400000, guid: 2561fca797dd8f74b9a14d75fb36b805, type: 3}
@@ -182,7 +122,7 @@ State:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: OpenDoor
-  m_Speed: 1
+  m_Speed: 1.75
   m_CycleOffset: 0
   m_Motions:
   - {fileID: 7400000, guid: 2561fca797dd8f74b9a14d75fb36b805, type: 3}
@@ -210,17 +150,14 @@ StateMachine:
       first: {fileID: 110200000}
       second:
       - {fileID: 110100000}
-      - {fileID: 110198798}
     data:
       first: {fileID: 110243229}
       second:
       - {fileID: 110161784}
-      - {fileID: 110181596}
     data:
       first: {fileID: 110237813}
       second:
       - {fileID: 110131253}
-      - {fileID: 110159194}
   m_MotionSetCount: 1
   m_AnyStatePosition: {x: 50, y: 20, z: 0}
   m_ParentStateMachinePosition: {x: 800, y: 20, z: 0}
