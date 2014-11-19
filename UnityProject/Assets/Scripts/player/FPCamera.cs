@@ -34,6 +34,7 @@ public class FPCamera : MonoBehaviour {
 
 	void Start () {
 		this.characterController = this.GetComponent<CharacterController>();
+		Screen.lockCursor = true;
 	}
 
 

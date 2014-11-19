@@ -12,6 +12,7 @@ public class GameStateManager : MonoBehaviour {
 	public float maxSingularityStrength = 200.0f;
 	public float maxSingularityDisplacement = 5.0f;
 	public float singularityGravityMultiplier = 1.0f;
+	public GameObject player;
 
 	// This defines a getter for the instance variable. When this static variable is called, it will
 	// return the currently active manager instance, allowing for singleton style access.
@@ -27,24 +28,34 @@ public class GameStateManager : MonoBehaviour {
 	private bool PAUSE_menu = false;
 
 	public void Update() {
+		if(Time.timeScale != 1 && !PAUSE_menu)
+			Time.timeScale = 1;
 		if ( Input.GetKeyDown("`") ) {
 			if(this.DEBUG_devToolsVisible) {
 				this.DEBUG_devToolsVisible = false;
-				Screen.showCursor = false;
+				Screen.lockCursor = true;
 			} else {
 				this.DEBUG_devToolsVisible = true;
-				Screen.showCursor = true;
+				Screen.lockCursor = false;
 			}
 		}
 		if(Input.GetButtonDown ("Pause")) {
 			if(PAUSE_menu) {
 				PAUSE_menu = false;
-				Screen.showCursor = false;
+				Screen.lockCursor = true;
+				if(player != null) {
+					player.GetComponent<FPController>().enabled = true;
+					player.GetComponent<FPCamera>().enabled = true;
+				}
 				Time.timeScale = 1;
 			}
 			else{
 				PAUSE_menu = true;
-				Screen.showCursor = true;
+				Screen.lockCursor = false;
+				if(player != null) {
+					player.GetComponent<FPController>().enabled = false;
+					player.GetComponent<FPCamera>().enabled = false;
+				}
 				Time.timeScale = 0;
 			}
 		}
