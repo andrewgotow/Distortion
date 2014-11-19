@@ -25,7 +25,7 @@ public class SingularityEffector : DeformationEffector {
 	public override void OnDestroy () {
 		AudioSource.PlayClipAtPoint( destroyAudio, transform.position );
 		if ( DeformationManager.instance != null )
-			DeformationManager.instance.RemoveEffector( this );
+			DeformationManager.instance.RemoveEffector( this );;
 	}
 
 	/* This function has been combined with "transform vertex" for efficiency's sake. 
