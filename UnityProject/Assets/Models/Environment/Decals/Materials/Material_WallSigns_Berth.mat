@@ -35,11 +35,15 @@ Material:
       data:
         first:
           name: _Brightness
-        second: .178571433
+        second: .357142866
       data:
         first:
           name: _Glitch
         second: 1
+      data:
+        first:
+          name: _GlitchAmount
+        second: .100000001
     m_Colors:
       data:
         first:

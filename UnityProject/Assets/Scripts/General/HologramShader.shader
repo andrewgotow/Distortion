@@ -11,7 +11,7 @@
 		LOD 200
 		
 		CGPROGRAM
-     	#pragma surface surf Unlit decal:add 
+     	#pragma surface surf Unlit decal:add nolightmap
 
 		sampler2D _MainTex;
 		sampler2D _NoiseTex;
