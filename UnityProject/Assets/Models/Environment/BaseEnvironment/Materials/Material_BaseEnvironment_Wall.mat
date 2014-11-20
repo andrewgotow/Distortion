@@ -27,6 +27,13 @@ Material:
           m_Texture: {fileID: 2800000, guid: bb4cd758978aa482aa93bc67f0feb657, type: 3}
           m_Scale: {x: 1, y: 1}
           m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _Detail
+        second:
+          m_Texture: {fileID: 2800000, guid: 58069e8589ea646aa9c2f8f6f37fde54, type: 3}
+          m_Scale: {x: 4, y: 4}
+          m_Offset: {x: 0, y: 0}
     m_Floats:
       data:
         first:

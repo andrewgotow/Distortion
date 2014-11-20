@@ -3,6 +3,7 @@
 		_MainTex ("Base (RGB)", 2D) = "white" {}
 		_NoiseTex ("Base (RGB)", 2D) = "white" {}
       	_Brightness ("Brightness", Range(0,1)) = 0.5
+		_GlitchAmount ( "Giltch", Range(0,1)) = 0.1
 	}
 
 	SubShader {
@@ -15,6 +16,7 @@
 		sampler2D _MainTex;
 		sampler2D _NoiseTex;
 		float _Brightness;
+		float _GlitchAmount;
 
 		struct Input {
 			float2 uv_MainTex;
@@ -32,15 +34,14 @@
     	}
 
 		void surf (Input IN, inout SurfaceOutput o) {
-			float4 noise = tex2D( _NoiseTex, float2(_Time.x/10,0) );
-			float2 glitchUVs = IN.uv_MainTex + noise.xy * sin(IN.worldPos.x + _Time.w*100);
+			float2 glitch_vec = _GlitchAmount * tex2D( _NoiseTex, float2(_Time.x, 0) ).xyz;
+			float2 glitch_offset = glitch_vec * rand( float3(IN.worldPos.x, IN.worldPos.y, _Time.w) );
+			
+			float stripe = 1.0 - clamp( tan( IN.worldPos.y * 50 - _Time.w ), 0, 0.45 );
 
-			float stripeSample = (4 * 6.283 * IN.worldPos.y);
-			float stripeVal = abs( sin( stripeSample - _Time.w ));
-
-			half4 c = tex2D (_MainTex, glitchUVs);
+			half4 c = tex2D (_MainTex, IN.uv_MainTex + glitch_offset ) * stripe;
          	
-			o.Albedo = c.rgb * clamp( stripeVal, 0.25, 1.0 ) * _Brightness;
+			o.Albedo = c.rgb * _Brightness;
 			o.Alpha = c.a;
 		}
 

@@ -4,8 +4,8 @@ using System.Collections;
 public class DoorTrigger : MonoBehaviour
 {
 	// Defines global variables
-	public Animator door;				// Which door is the trigger affecting?
-	public bool activeDoor = false;		// Is the door powered?
+	public Animator doorAnimator;		// Reference the animator for this door
+	public bool isActive = false;		// Is the door powered?
 	private AudioSource audioSrc;		// AudioSource for Door Open SFX
 
 	void Start() {
@@ -14,8 +14,8 @@ public class DoorTrigger : MonoBehaviour
 	}
 
 	void OnTriggerEnter(Collider other) {
-		if (activeDoor && other.tag == "Player") {
-			door.SetBool ("openDoor", true);
+		if (isActive && other.tag == "Player") {
+			doorAnimator.SetTrigger ("open");
 			if(audioSrc.clip != null) {
 				audioSrc.Play ();
 			}
@@ -23,9 +23,14 @@ public class DoorTrigger : MonoBehaviour
 	}
 
 	void OnTriggerExit(Collider other) {
-		if (activeDoor && other.tag == "Player") {
-			door.SetBool ("openDoor", false);
+		if (isActive && other.tag == "Player") {
+			doorAnimator.SetTrigger ("close");
 		}
+	}
+
+
+	void SetActive ( bool active ) {
+		this.isActive = true;
 	}
 
 
