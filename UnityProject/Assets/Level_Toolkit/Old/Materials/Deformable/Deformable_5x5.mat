@@ -28,7 +28,7 @@ Material:
       data:
         first:
           name: _WobbleScale
-        second: .00892857183
+        second: 0
       data:
         first:
           name: _WobbleSpeed

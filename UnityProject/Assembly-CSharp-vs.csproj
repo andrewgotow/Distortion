@@ -66,6 +66,7 @@
      <Compile Include="Assets\Scripts\player\FootSteps.cs" />
      <Compile Include="Assets\Scripts\player\PlayerFire.cs" />
      <None Include="Assets\Scripts\General\HologramShader.shader" />
+     <None Include="Assets\Models\Entities\shader_powerCore.shader" />
      <None Include="Assets\Scripts\deformation\DeformationTargetShader.shader" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

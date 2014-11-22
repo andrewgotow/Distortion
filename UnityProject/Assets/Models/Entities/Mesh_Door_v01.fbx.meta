@@ -1,0 +1,165 @@
+fileFormatVersion: 2
+guid: 2561fca797dd8f74b9a14d75fb36b805
+ModelImporter:
+  serializedVersion: 16
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: Bottom_lock
+    100004: Bottom_lock1
+    100006: Door_lock
+    100008: Door_lock1
+    100010: group2
+    100012: Left_door
+    100014: Right_door
+    100016: Top_lock
+    100018: Top_lock1
+    100020: Wheel
+    100022: Wheel1
+    400000: //RootNode
+    400002: Bottom_lock
+    400004: Bottom_lock1
+    400006: Door_lock
+    400008: Door_lock1
+    400010: group2
+    400012: Left_door
+    400014: Right_door
+    400016: Top_lock
+    400018: Top_lock1
+    400020: Wheel
+    400022: Wheel1
+    2300000: Bottom_lock
+    2300002: Bottom_lock1
+    2300004: Door_lock
+    2300006: Door_lock1
+    2300008: Left_door
+    2300010: Right_door
+    2300012: Top_lock
+    2300014: Top_lock1
+    2300016: Wheel
+    2300018: Wheel1
+    3300000: Bottom_lock
+    3300002: Bottom_lock1
+    3300004: Door_lock
+    3300006: Door_lock1
+    3300008: Left_door
+    3300010: Right_door
+    3300012: Top_lock
+    3300014: Top_lock1
+    3300016: Wheel
+    3300018: Wheel1
+    4300000: Left_door
+    4300002: Wheel
+    4300004: Door_lock
+    4300006: Top_lock
+    4300008: Bottom_lock
+    4300010: Right_door
+    4300012: Door_lock1
+    4300014: Top_lock1
+    4300016: Wheel1
+    4300018: Bottom_lock1
+    7400000: DoorAnimation
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: DoorAnimation
+      takeName: Take 001
+      firstFrame: 1
+      lastFrame: 57
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Left_door
+        weight: 1
+      - path: Left_door/Bottom_lock
+        weight: 1
+      - path: Left_door/Door_lock
+        weight: 1
+      - path: Left_door/Top_lock
+        weight: 1
+      - path: Left_door/Wheel
+        weight: 1
+      - path: Right_door
+        weight: 1
+      - path: Right_door/group2
+        weight: 1
+      - path: Right_door/group2/Bottom_lock1
+        weight: 1
+      - path: Right_door/group2/Door_lock1
+        weight: 1
+      - path: Right_door/group2/Top_lock1
+        weight: 1
+      - path: Right_door/group2/Wheel1
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: .00999999978
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  additionalBone: 0
+  userData: 
