@@ -3,6 +3,7 @@
 --- !u!78 &1
 TagManager:
   tags:
+  - CheckpointManager
   - 
   Builtin Layer 0: Default
   Builtin Layer 1: TransparentFX
@@ -15,7 +16,7 @@ TagManager:
   User Layer 8: Deformable
   User Layer 9: Terrain
   User Layer 10: FirstPerson
-  User Layer 11: 
+  User Layer 11: Preview
   User Layer 12: 
   User Layer 13: 
   User Layer 14: 
