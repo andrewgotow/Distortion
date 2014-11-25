@@ -9,29 +9,41 @@ public class SwitchTrigger : MonoBehaviour
 	//public GameObject door2;
 
 	public GameObject[] poweredObjects;
-
+	private GameObject powerCell;
+	/*
 	private AudioSource a_src;
 
 	void Start() {
 		a_src = GetComponent<AudioSource>();
 	}
+	*/
 
+	void Update () {
+		if ( powerCell != null ) {
+			powerCell.transform.position = Vector3.Lerp( powerCell.transform.position, transform.position + Vector3.up * (1.5f + Mathf.Sin(Time.time) * 0.5f), Time.deltaTime );
+			powerCell.transform.Rotate( Vector3.up * 10 * Time.deltaTime );
+		}
+	}
 
 
 	void OnTriggerEnter (Collider col) {
-		if(a_src.clip != null) {
-			a_src.Play();
-		}
+		if ( col.tag == "PowerCell" ) {
+			audio.Play();
+ 			
+			foreach ( GameObject obj in poweredObjects ) {
+				obj.BroadcastMessage( "SetActive", true, SendMessageOptions.DontRequireReceiver );
+			}
+
+			powerCell = col.gameObject;
+ 			powerCell.rigidbody.isKinematic = true;
+ 		}
 		
-		foreach ( GameObject obj in poweredObjects ) {
-			obj.BroadcastMessage( "SetActive", true, SendMessageOptions.DontRequireReceiver );
-		}
 		//doorAnimator.SetInteger ("doorAnim", 1);
 
 		//door1.GetComponent<DoorTrigger> ().activeDoor = true;
 		//door2.GetComponent<DoorTrigger> ().activeDoor = true;
 	}
-
+	/*
 	void OnTriggerExit (Collider col) {
 		//doorAnimator.SetInteger ("doorAnim", 2);
 
@@ -45,7 +57,7 @@ public class SwitchTrigger : MonoBehaviour
 		//door1.GetComponentInParent <Animator> ().SetBool ("openDoor", false);
 		//door2.GetComponentInParent <Animator> ().SetBool ("openDoor", false);
 	}
-
+	*/
 	void OnDrawGizmos () {
 		Gizmos.color = new Color( 1, 0, 0, 0.5f );
 		foreach ( GameObject obj in poweredObjects ) {
