@@ -47,6 +47,8 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\BulletMovement.cs" />
+     <Compile Include="Assets\Scripts\Checkpoints\Checkpoint.cs" />
+     <Compile Include="Assets\Scripts\Checkpoints\CheckpointMgrScript.cs" />
      <Compile Include="Assets\Scripts\DoorTrigger.cs" />
      <Compile Include="Assets\Scripts\General\GameStateManager.cs" />
      <Compile Include="Assets\Scripts\IntroAudioController.cs" />

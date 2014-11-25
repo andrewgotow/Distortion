@@ -7,7 +7,7 @@ Material:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: Material_Deformable
-  m_Shader: {fileID: 4800000, guid: 669aceb8f8e384be484e2fc88d8dedb2, type: 3}
+  m_Shader: {fileID: 4800000, guid: eb772b5f78f064114b320b2ffcf7f475, type: 3}
   m_ShaderKeywords: []
   m_CustomRenderQueue: -1
   m_SavedProperties:
@@ -32,6 +32,18 @@ Material:
         first:
           name: _StripeSize
         second: 2.67857146
+      data:
+        first:
+          name: _DistortionScale
+        second: 1
+      data:
+        first:
+          name: _WobbleScale
+        second: .0500000007
+      data:
+        first:
+          name: _WobbleSpeed
+        second: 3
     m_Colors:
       data:
         first:
