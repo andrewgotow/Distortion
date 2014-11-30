@@ -18,7 +18,7 @@ public class CheckpointMgrScript : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-	
+
 	}
 
 	public void SetLastCheckpoint(GameObject cp) {
