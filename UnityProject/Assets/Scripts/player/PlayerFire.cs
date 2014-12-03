@@ -9,17 +9,14 @@ public class PlayerFire : MonoBehaviour {
 
 	public GameObject singularityPrefab;
 	public Animator firstPersonAnimator;
-	//private GameObject gameStateManager;
 
 	// Use this for initialization
 	void Awake () {
 		this._camera = this.gameObject.GetComponentInChildren<Camera>().transform;
-		//gameStateManager = GameObject.Find("GameStateManager");
 	}
 
 	// Update is called once per frame
 	void Update () {
-		//if (!gameStateManager.GetComponent<GameStateManager> ().PAUSE_menu) {
 			if (Input.GetButtonDown ("Fire2")) {
 				this.firstPersonAnimator.SetTrigger ("Dissipate");
 				if (this._singularity != null) {
@@ -38,5 +35,4 @@ public class PlayerFire : MonoBehaviour {
 				}
 			}
 		}
-	//}
 }

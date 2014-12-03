@@ -1,12 +1,11 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace />
-  <MonoDevelop.Ide.Workbench ActiveDocument="..\..\..\..\Senior Project\malevolence-inc\Assets\Scripts\Traps\TrapHandler.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\General\GameStateManager.cs">
     <Files>
-      <File FileName="..\..\..\..\Senior Project\malevolence-inc\Assets\Scripts\Trap Selector\TrapButton.cs" Line="11" Column="57" />
-      <File FileName="..\..\..\..\Senior Project\malevolence-inc\Assets\Scripts\Input\InputManager.cs" Line="1" Column="1" />
-      <File FileName="..\..\..\..\Senior Project\malevolence-inc\Assets\Scripts\Controllers\TrapController.cs" Line="65" Column="19" />
-      <File FileName="..\..\..\..\Senior Project\malevolence-inc\Assets\Scripts\Trap Selector\TrapShelf.cs" Line="55" Column="25" />
-      <File FileName="..\..\..\..\Senior Project\malevolence-inc\Assets\Scripts\Traps\TrapHandler.cs" Line="64" Column="64" />
+      <File FileName="Assets\Scripts\Checkpoints\CheckpointMgrScript.cs" Line="40" Column="72" />
+      <File FileName="Assets\Scripts\General\GameStateManager.cs" Line="86" Column="4" />
+      <File FileName="Assets\Scripts\KillPlayer.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\player\PlayerFire.cs" Line="12" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
