@@ -13,6 +13,7 @@ public class GameStateManager : MonoBehaviour {
 	public float maxSingularityDisplacement = 5.0f;
 	public float singularityGravityMultiplier = 1.0f;
 	public GameObject player;
+	public GameObject checkpointMgr;
 
 	// This defines a getter for the instance variable. When this static variable is called, it will
 	// return the currently active manager instance, allowing for singleton style access.
@@ -24,8 +25,14 @@ public class GameStateManager : MonoBehaviour {
 		}
 	}
 
+	public void Start() {
+		if (checkpointMgr == null) {
+			checkpointMgr = GameObject.FindGameObjectWithTag("CheckpointManager");
+		}
+	}
+
 	private bool DEBUG_devToolsVisible = false;
-	private bool PAUSE_menu = false;
+	public bool PAUSE_menu = false;
 
 	public void Update() {
 		if(Time.timeScale != 1 && !PAUSE_menu)
@@ -41,22 +48,10 @@ public class GameStateManager : MonoBehaviour {
 		}
 		if(Input.GetButtonDown ("Pause")) {
 			if(PAUSE_menu) {
-				PAUSE_menu = false;
-				Screen.lockCursor = true;
-				if(player != null) {
-					player.GetComponent<FPController>().enabled = true;
-					player.GetComponent<FPCamera>().enabled = true;
-				}
-				Time.timeScale = 1;
+				SetPauseMenu (false);
 			}
 			else{
-				PAUSE_menu = true;
-				Screen.lockCursor = false;
-				if(player != null) {
-					player.GetComponent<FPController>().enabled = false;
-					player.GetComponent<FPCamera>().enabled = false;
-				}
-				Time.timeScale = 0;
+				SetPauseMenu (true);
 			}
 		}
 	}
@@ -74,16 +69,42 @@ public class GameStateManager : MonoBehaviour {
 			GUILayout.EndArea();
 		}
 		if(this.PAUSE_menu) {
-			GUILayout.BeginArea(new Rect(300,100,500,200),"Options Menu", "window");
-			if(GUI.Button(new Rect(150,50,150,50), "Reset Game")) {
+			GUILayout.BeginArea(new Rect(300,100,500,300),"Options Menu", "window");
+			if(GUI.Button(new Rect(150,30,150,50),"Resume Game")) {
+				SetPauseMenu (false);
+			}
+			if(GUI.Button(new Rect(150,150,150,50), "Reset Game")) {
 				Application.LoadLevel(1);
 			}
-			if(GUI.Button(new Rect(150,125,150,50), "Quit Game")) {
+			if(GUI.Button (new Rect(150,90,150,50), "Reload Last Checkpoint")) {
+				checkpointMgr.GetComponent<CheckpointMgrScript>().Spawn();
+			}
+			if(GUI.Button(new Rect(150,210,150,50), "Quit Game")) {
 				Application.LoadLevel(0);
 			}
 			GUILayout.EndArea();
 		}
-
 	}
 
+	public void SetPauseMenu(bool b) {
+		if (b) {
+			PAUSE_menu = true;
+			Screen.lockCursor = false;
+			if(player != null) {
+				player.GetComponent<FPController>().enabled = false;
+				player.GetComponent<FPCamera>().enabled = false;
+				player.GetComponent<PlayerFire>().enabled = false;
+			}
+			Time.timeScale = 0;
+		} else {
+			PAUSE_menu = false;
+			Screen.lockCursor = true;
+			if(player != null) {
+				player.GetComponent<FPController>().enabled = true;
+				player.GetComponent<FPCamera>().enabled = true;
+				player.GetComponent<PlayerFire>().enabled = true;
+			}
+			Time.timeScale = 1;
+		}
+	}
 }

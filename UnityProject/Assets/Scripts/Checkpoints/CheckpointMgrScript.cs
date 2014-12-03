@@ -7,6 +7,7 @@ public class CheckpointMgrScript : MonoBehaviour {
 	public GameObject[] checkpointList;
 	private GameObject _currentCheckpoint;
 	private int _currCheckpointNum;
+	private GameObject gameStateMgr;
 
 	// Use this for initialization
 	void Start () {
@@ -14,6 +15,7 @@ public class CheckpointMgrScript : MonoBehaviour {
 		if (checkpointList.Length > 0) {
 			_currentCheckpoint = checkpointList[0];
 		}
+		gameStateMgr = GameObject.Find("GameStateManager");
 	}
 	
 	// Update is called once per frame
@@ -35,6 +37,7 @@ public class CheckpointMgrScript : MonoBehaviour {
 		if (player != null) {
 			if(_currentCheckpoint != null) {
 				player.transform.position = _currentCheckpoint.transform.position;
+				gameStateMgr.GetComponent<GameStateManager>().SetPauseMenu (false);
 			}
 		}
 	}
