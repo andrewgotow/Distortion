@@ -25,4 +25,9 @@ public class Checkpoint : MonoBehaviour {
 			//checkpointMgr.GetComponent<CheckpointMgrScript>().Spawn ();
 		}
 	}
+
+	void OnDrawGizmos () {
+		Gizmos.color = new Color( 0f, 1f, 0f, 0.15f );
+		Gizmos.DrawCube( collider.bounds.center, collider.bounds.size );
+	}
 }
