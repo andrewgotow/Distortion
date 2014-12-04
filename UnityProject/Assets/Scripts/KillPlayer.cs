@@ -12,6 +12,8 @@ public class KillPlayer : MonoBehaviour
 					checkpointMgr.GetComponent<CheckpointMgrScript> ().Spawn ();
 			else
 					Application.LoadLevel(Application.loadedLevel);
+		} else if(other.gameObject.tag == "PowerCell") {
+			other.gameObject.GetComponent<Powercell>().ReturnToStartPosition();
 		}
 	}
 }

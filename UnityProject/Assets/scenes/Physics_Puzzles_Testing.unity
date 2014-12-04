@@ -521,6 +521,7 @@ GameObject:
   - 135: {fileID: 29460915}
   - 114: {fileID: 29460914}
   - 82: {fileID: 29460913}
+  - 114: {fileID: 29460921}
   m_Layer: 0
   m_Name: Prefab_PowerCell
   m_TagString: PowerCell
@@ -649,6 +650,7 @@ Animator:
   m_UpdateMode: 0
   m_ApplyRootMotion: 1
   m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!23 &29460918
 Renderer:
   m_ObjectHideFlags: 0
@@ -685,12 +687,24 @@ Transform:
   m_PrefabInternal: {fileID: 1217343102}
   m_GameObject: {fileID: 29460912}
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 30, y: 22, z: 6}
+  m_LocalPosition: {x: 24.2384224, y: 6.89107704, z: 12.5141888}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1928677121}
   m_Father: {fileID: 0}
   m_RootOrder: 7
+--- !u!114 &29460921
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 29460912}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43acb2e96c38f014bb14d942f5f54b54, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startPosition: {x: 0, y: 0, z: 0}
 --- !u!1 &30702187
 GameObject:
   m_ObjectHideFlags: 0
@@ -19492,15 +19506,15 @@ Prefab:
     m_Modifications:
     - target: {fileID: 400000, guid: 360ab5340d3944fa797f9f343e1e944a, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 30
+      value: 24.2384224
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 360ab5340d3944fa797f9f343e1e944a, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 22
+      value: 6.89107704
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 360ab5340d3944fa797f9f343e1e944a, type: 2}
       propertyPath: m_LocalPosition.z
-      value: 6
+      value: 12.5141888
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 360ab5340d3944fa797f9f343e1e944a, type: 2}
       propertyPath: m_LocalRotation.x
@@ -19524,7 +19538,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 360ab5340d3944fa797f9f343e1e944a, type: 2}
       propertyPath: m_RootOrder
-      value: 4
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 360ab5340d3944fa797f9f343e1e944a, type: 2}
@@ -20659,6 +20673,7 @@ Animator:
   m_UpdateMode: 0
   m_ApplyRootMotion: 1
   m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!1 &1287984147
 GameObject:
   m_ObjectHideFlags: 0
@@ -24808,6 +24823,7 @@ Animator:
   m_UpdateMode: 0
   m_ApplyRootMotion: 1
   m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!1001 &1509924531
 Prefab:
   m_ObjectHideFlags: 0
@@ -32532,6 +32548,7 @@ Animator:
   m_UpdateMode: 0
   m_ApplyRootMotion: 1
   m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!1 &2004457460
 GameObject:
   m_ObjectHideFlags: 0
