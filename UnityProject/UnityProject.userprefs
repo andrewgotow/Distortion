@@ -1,9 +1,11 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\powercell\Powercell.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Checkpoints\Checkpoint.cs">
     <Files>
-      <File FileName="Assets\Scripts\powercell\Powercell.cs" Line="12" Column="5" />
-      <File FileName="Assets\Scripts\KillPlayer.cs" Line="15" Column="4" />
+      <File FileName="Assets\Scripts\powercell\Powercell.cs" Line="12" Column="29" />
+      <File FileName="Assets\Scripts\KillPlayer.cs" Line="9" Column="74" />
+      <File FileName="Assets\Scripts\Checkpoints\CheckpointMgrScript.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Checkpoints\Checkpoint.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

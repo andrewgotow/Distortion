@@ -7,6 +7,8 @@ public class DoorTrigger : MonoBehaviour
 	public Animator doorAnimator;		// Reference the animator for this door
 	public bool isActive = false;		// Is the door powered?
 	private AudioSource audioSrc;		// AudioSource for Door Open SFX
+	public AudioClip doorOpen;
+	public AudioClip doorLocked;
 
 	void Start() {
 		if(GetComponent<AudioSource>() != null)
@@ -16,8 +18,18 @@ public class DoorTrigger : MonoBehaviour
 	void OnTriggerEnter(Collider other) {
 		if (isActive && other.tag == "Player") {
 			doorAnimator.SetTrigger ("open");
-			if(audioSrc.clip != null) {
+			if(doorOpen != null) {
+				audioSrc.clip = doorOpen;
+				audioSrc.volume = 1f;
+				audioSrc.dopplerLevel = 1f;
 				audioSrc.Play ();
+			}
+		} else if(!isActive && other.tag == "Player") {
+			if(doorLocked != null) {
+				audioSrc.clip = doorLocked;
+				audioSrc.volume = .5f;
+				audioSrc.dopplerLevel = 0f;
+				audioSrc.Play();
 			}
 		}
 	}
