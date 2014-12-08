@@ -22,10 +22,9 @@ public class SingularityEffector : DeformationEffector {
 		return (this.transform.position - obj.position).sqrMagnitude < 2500.0f;
 	}
 
-	public override void OnDestroy () {
+	public override void DestroyEffector () {
 		AudioSource.PlayClipAtPoint( destroyAudio, transform.position );
-		if ( DeformationManager.instance != null )
-			DeformationManager.instance.RemoveEffector( this );;
+		Destroy( gameObject );
 	}
 
 	/* This function has been combined with "transform vertex" for efficiency's sake. 

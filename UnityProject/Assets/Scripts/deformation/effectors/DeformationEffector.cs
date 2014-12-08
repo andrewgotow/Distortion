@@ -7,6 +7,10 @@ public abstract class DeformationEffector : MonoBehaviour {
 		DeformationManager.instance.AddEffector( this );
 	}
 
+	public virtual void DestroyEffector () {
+		Destroy( gameObject );
+	}
+
 	public virtual void OnDestroy () {
 		if ( DeformationManager.instance != null )
 			DeformationManager.instance.RemoveEffector( this );

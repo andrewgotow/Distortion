@@ -6,8 +6,8 @@ Material:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: Material_Glove_Metal
-  m_Shader: {fileID: 3, guid: 0000000000000000f000000000000000, type: 0}
+  m_Name: material_hand_metal
+  m_Shader: {fileID: 12, guid: 0000000000000000f000000000000000, type: 0}
   m_ShaderKeywords: []
   m_CustomRenderQueue: -1
   m_SavedProperties:
@@ -17,27 +17,31 @@ Material:
         first:
           name: _MainTex
         second:
-          m_Texture: {fileID: 0}
+          m_Texture: {fileID: 2800000, guid: d3e64928047654e7c89204f11899646b, type: 3}
           m_Scale: {x: 1, y: 1}
           m_Offset: {x: 0, y: 0}
       data:
         first:
-          name: _Detail
+          name: _Illum
         second:
-          m_Texture: {fileID: 0}
+          m_Texture: {fileID: 2800000, guid: a5388259475304625a58651cc2cc7bdd, type: 3}
           m_Scale: {x: 1, y: 1}
           m_Offset: {x: 0, y: 0}
     m_Floats:
       data:
         first:
           name: _Shininess
-        second: 1
+        second: .496317267
+      data:
+        first:
+          name: _EmissionLM
+        second: 0
     m_Colors:
       data:
         first:
           name: _Color
-        second: {r: .588235259, g: .588235259, b: .588235259, a: 1}
+        second: {r: 1, g: 1, b: 1, a: 1}
       data:
         first:
           name: _SpecColor
-        second: {r: .897058845, g: .897058845, b: .897058845, a: 1}
+        second: {r: .5, g: .5, b: .5, a: 1}

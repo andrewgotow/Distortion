@@ -172,7 +172,7 @@ public class DeformationTarget : MonoBehaviour {
 		//	this.meshes[ index ] = new DeformableMesh( filters[ index ], filters[ index ].GetComponent<MeshCollider>() );
 		this.mesh = new DeformableMesh( this.gameObject.GetComponent<MeshFilter>(), this.gameObject.GetComponent<MeshRenderer>(), this.gameObject.GetComponent<MeshCollider>() );
 	}
-
+/*
 	public void OnCollisionEnter ( Collision collision ) {
 		Debug.Log( "DEBUG: collision information updated" );
 		this.trackedCollisions[ collision.gameObject.GetInstanceID() ] = collision;
@@ -187,7 +187,7 @@ public class DeformationTarget : MonoBehaviour {
 		Debug.Log( "DEBUG: collision information updated" );
 		this.trackedCollisions[ collision.gameObject.GetInstanceID() ] = collision;
 	}
-
+*/
 	public void Update () {
 		this.mesh.UpdateWarpScale();
 	}
