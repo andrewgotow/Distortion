@@ -1,0 +1,126 @@
+fileFormatVersion: 2
+guid: 9307e824dc8af4f04be971ba448cb4ad
+ModelImporter:
+  serializedVersion: 16
+  fileIDToRecycleName:
+    100000: hand
+    100002: hand_detail_01
+    100004: hand_detail_02
+    100006: hand_detail_03
+    100008: hand_detail_04
+    100010: //RootNode
+    100012: index_01
+    100014: index_02
+    100016: index_03
+    100018: middle_01
+    100020: middle_02
+    100022: middle_03
+    100024: pinkey_02
+    100026: pinkey_03
+    100028: pinky_01
+    100030: ring_01
+    100032: ring_02
+    100034: ring_03
+    100036: root
+    100038: thumb_01
+    100040: thumb_02
+    100042: thumb_03
+    100044: wrist
+    100046: camera1
+    100048: forearm
+    100050: root_camera
+    400000: hand
+    400002: hand_detail_01
+    400004: hand_detail_02
+    400006: hand_detail_03
+    400008: hand_detail_04
+    400010: //RootNode
+    400012: index_01
+    400014: index_02
+    400016: index_03
+    400018: middle_01
+    400020: middle_02
+    400022: middle_03
+    400024: pinkey_02
+    400026: pinkey_03
+    400028: pinky_01
+    400030: ring_01
+    400032: ring_02
+    400034: ring_03
+    400036: root
+    400038: thumb_01
+    400040: thumb_02
+    400042: thumb_03
+    400044: wrist
+    400046: camera1
+    400048: forearm
+    400050: root_camera
+    2300000: hand_detail_01
+    2300002: hand_detail_02
+    2300004: hand_detail_03
+    2300006: hand_detail_04
+    3300000: hand_detail_01
+    3300002: hand_detail_02
+    3300004: hand_detail_03
+    3300006: hand_detail_04
+    4300000: hand
+    4300002: hand_detail_01
+    4300004: hand_detail_02
+    4300006: hand_detail_03
+    4300008: hand_detail_04
+    9500000: //RootNode
+    13700000: hand
+  materials:
+    importMaterials: 0
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: .25
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  additionalBone: 0
+  userData: 

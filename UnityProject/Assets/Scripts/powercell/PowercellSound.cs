@@ -30,7 +30,6 @@ public class PowercellSound : MonoBehaviour {
 					vol = .8f;
 				else
 					vol = 1.0f;
-				Debug.Log (Random.Range (0,clips.Length));
 				audioSrc.clip = clips[Random.Range(0,clips.Length)];
 				audioSrc.PlayOneShot (audioSrc.clip, vol);
 				//Debug.Log (col.gameObject.name+" : "+angle+" : "+col.relativeVelocity.magnitude);

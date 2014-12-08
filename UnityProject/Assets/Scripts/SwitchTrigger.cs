@@ -61,7 +61,8 @@ public class SwitchTrigger : MonoBehaviour
 	void OnDrawGizmos () {
 		Gizmos.color = new Color( 1, 0, 0, 0.5f );
 		foreach ( GameObject obj in poweredObjects ) {
-			Gizmos.DrawLine( transform.position, obj.transform.position );
+			if ( obj != null )
+				Gizmos.DrawLine( transform.position, obj.transform.position );
 		}
 	}
 
