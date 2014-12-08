@@ -1,12 +1,15 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\DoorTrigger.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\MusicFadeIntro.cs">
     <Files>
-      <File FileName="Assets\Scripts\powercell\Powercell.cs" Line="12" Column="29" />
+      <File FileName="Assets\Models\Entities\shader_powerCore.shader" Line="11" Column="3" />
+      <File FileName="Assets\Scripts\powercell\Powercell.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\KillPlayer.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Checkpoints\CheckpointMgrScript.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Checkpoints\Checkpoint.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\DoorTrigger.cs" Line="30" Column="25" />
+      <File FileName="Assets\Scripts\DoorTrigger.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\IntroController.cs" Line="26" Column="27" />
+      <File FileName="Assets\MusicFadeIntro.cs" Line="18" Column="2" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
