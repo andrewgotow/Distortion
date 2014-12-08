@@ -57,6 +57,7 @@
      <Compile Include="Assets\Scripts\KillPlayer.cs" />
      <Compile Include="Assets\Scripts\LoadLevel.cs" />
      <Compile Include="Assets\Scripts\Menu.cs" />
+     <Compile Include="Assets\Scripts\MusicFadeIntro.cs" />
      <Compile Include="Assets\Scripts\Reticle.cs" />
      <Compile Include="Assets\Scripts\SwitchTrigger.cs" />
      <Compile Include="Assets\Scripts\TurretMovement.cs" />
