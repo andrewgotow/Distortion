@@ -10,13 +10,13 @@ public class SwitchTrigger : MonoBehaviour
 
 	public GameObject[] poweredObjects;
 	private GameObject powerCell;
-	/*
-	private AudioSource a_src;
+
+	//private AudioSource a_src;
 
 	void Start() {
-		a_src = GetComponent<AudioSource>();
+		//a_src = GetComponent<AudioSource>();
 	}
-	*/
+
 
 	void Update () {
 		if ( powerCell != null ) {
@@ -36,6 +36,8 @@ public class SwitchTrigger : MonoBehaviour
 
 			powerCell = col.gameObject;
  			powerCell.rigidbody.isKinematic = true;
+
+			col.enabled = false;
  		}
 		
 		//doorAnimator.SetInteger ("doorAnim", 1);

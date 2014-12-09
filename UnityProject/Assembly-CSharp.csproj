@@ -51,6 +51,7 @@
      <Compile Include="Assets\Scripts\Checkpoints\CheckpointMgrScript.cs" />
      <Compile Include="Assets\Scripts\DoorTrigger.cs" />
      <Compile Include="Assets\Scripts\ElevatorSequence.cs" />
+     <Compile Include="Assets\Scripts\General\EnvironmentLight.cs" />
      <Compile Include="Assets\Scripts\General\GameStateManager.cs" />
      <Compile Include="Assets\Scripts\IntroAudioController.cs" />
      <Compile Include="Assets\Scripts\IntroController.cs" />
@@ -59,12 +60,14 @@
      <Compile Include="Assets\Scripts\Menu.cs" />
      <Compile Include="Assets\Scripts\MusicFadeIntro.cs" />
      <Compile Include="Assets\Scripts\Reticle.cs" />
+     <Compile Include="Assets\Scripts\SpinningPipe.cs" />
      <Compile Include="Assets\Scripts\SwitchTrigger.cs" />
      <Compile Include="Assets\Scripts\TurretMovement.cs" />
      <Compile Include="Assets\Scripts\deformation\DeformationManager.cs" />
      <Compile Include="Assets\Scripts\deformation\DeformationTarget.cs" />
      <Compile Include="Assets\Scripts\deformation\effectors\DeformationEffector.cs" />
      <Compile Include="Assets\Scripts\deformation\effectors\SingularityEffector.cs" />
+     <Compile Include="Assets\Scripts\player\AnimationEventForwarder.cs" />
      <Compile Include="Assets\Scripts\player\FPCamera.cs" />
      <Compile Include="Assets\Scripts\player\FPController.cs" />
      <Compile Include="Assets\Scripts\player\FootSteps.cs" />
@@ -76,6 +79,7 @@
      <None Include="Assets\Models\Entities\shader_powerCore.shader" />
      <None Include="Assets\SpaceScene\EarthShader.shader" />
      <None Include="Assets\SpaceScene\AtmosphereShader.shader" />
+     <None Include="Assets\Scripts\General\GlassShader.shader" />
      <None Include="Assets\Scripts\deformation\DeformationTargetShader.shader" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

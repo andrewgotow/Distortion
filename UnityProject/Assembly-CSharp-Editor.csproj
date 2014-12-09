@@ -47,12 +47,14 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Editor\GeneratePrefab.cs" />
+     <Compile Include="Assets\Editor\RenderToCubemap.cs" />
      <Compile Include="Assets\Editor\ReplacePrefab.cs" />
      <Compile Include="Assets\Editor\movePivot.cs" />
      <None Include="Assets\Scripts\General\HologramShader.shader" />
      <None Include="Assets\Models\Entities\shader_powerCore.shader" />
      <None Include="Assets\SpaceScene\EarthShader.shader" />
      <None Include="Assets\SpaceScene\AtmosphereShader.shader" />
+     <None Include="Assets\Scripts\General\GlassShader.shader" />
      <None Include="Assets\Scripts\deformation\DeformationTargetShader.shader" />
  <Reference Include="UnityEditor.Graphs">
  <HintPath>E:/Program Files/Unity/Editor/Data/Managed/UnityEditor.Graphs.dll</HintPath>

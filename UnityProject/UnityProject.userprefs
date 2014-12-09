@@ -1,6 +1,12 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace />
-  <MonoDevelop.Ide.Workbench />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\SpinningPipe.cs">
+    <Files>
+      <File FileName="Assets\Scripts\DoorTrigger.cs" Line="39" Column="38" />
+      <File FileName="Assets\Scripts\SwitchTrigger.cs" Line="12" Column="31" />
+      <File FileName="Assets\Scripts\SpinningPipe.cs" Line="15" Column="64" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
