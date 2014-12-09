@@ -90,10 +90,8 @@ public class DeformableMesh {
 		// and sets the weight that way instead.
 		for ( int index = 0; index < this.baseMesh.vertices.Length; index ++ ) {
 			Vector3 position = this.transform.TransformPoint( this.baseMesh.vertices[index] );
-			for ( float range = 2.0f; range > 0; range -= 0.1f ) {
-				if ( Physics.CheckSphere( position, range, Physics.AllLayers^(1<<LayerMask.NameToLayer("Deformable")) ) )
-					vertexWeights[index] = range / 2.0f;
-			}
+			if ( Physics.CheckSphere( position, 0.01f, Physics.AllLayers^(1<<LayerMask.NameToLayer("Deformable")) ) )
+				vertexWeights[index] = 0;
 		}
 	}
 
@@ -123,7 +121,7 @@ public class DeformableMesh {
 					Vector3 castVec = newPos - vertices[index];
 					RaycastHit castHit;
 					if ( Physics.Raycast( this.transform.TransformPoint(vertices[index]), this.transform.TransformDirection(castVec), out castHit, castVec.magnitude, Physics.AllLayers^(1<<LayerMask.NameToLayer("Deformable")) ) ) {
-						newPos = this.transform.InverseTransformPoint( castHit.point );
+						newPos = this.transform.InverseTransformPoint( castHit.point ) - castVec.normalized * 0.01f;
 					}
 					displacement = newPos - vertices[index];
 					vertices[index] = newPos;
@@ -174,7 +172,7 @@ public class DeformationTarget : MonoBehaviour {
 		//	this.meshes[ index ] = new DeformableMesh( filters[ index ], filters[ index ].GetComponent<MeshCollider>() );
 		this.mesh = new DeformableMesh( this.gameObject.GetComponent<MeshFilter>(), this.gameObject.GetComponent<MeshRenderer>(), this.gameObject.GetComponent<MeshCollider>() );
 	}
-
+/*
 	public void OnCollisionEnter ( Collision collision ) {
 		Debug.Log( "DEBUG: collision information updated" );
 		this.trackedCollisions[ collision.gameObject.GetInstanceID() ] = collision;
@@ -189,7 +187,7 @@ public class DeformationTarget : MonoBehaviour {
 		Debug.Log( "DEBUG: collision information updated" );
 		this.trackedCollisions[ collision.gameObject.GetInstanceID() ] = collision;
 	}
-
+*/
 	public void Update () {
 		this.mesh.UpdateWarpScale();
 	}

@@ -25,6 +25,14 @@ Material:
         first:
           name: _DistortionScale
         second: 1
+      data:
+        first:
+          name: _WobbleScale
+        second: 0
+      data:
+        first:
+          name: _WobbleSpeed
+        second: 5.71428585
     m_Colors:
       data:
         first:

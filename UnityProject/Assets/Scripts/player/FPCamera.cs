@@ -28,25 +28,44 @@ public class FPCamera : MonoBehaviour {
 	public float _input_rotateY_scale = 4.0f;
 	public float _input_rotateX_scale = 4.0f;
 
+	private Vector3 _firstPersonSway = Vector3.zero;
+	private Vector3 _firstPersonSwayVelocity = Vector3.zero;
+	public Transform _firstPersonModel;
+	private float _firstPersonSwaySpring = 75.0f;
+	private float _firstPersonSwayDamping = 0.175f;
+	private float _maxFirstPersonSwayOffset = 15.0f;
+
+	private float fall_duration = 0;
 	public CharacterController characterController;
 
 	void Start () {
 		this.characterController = this.GetComponent<CharacterController>();
+		Screen.lockCursor = true;
 	}
 
 
 	void Update () {		
 		transform.Rotate( 0, Input.GetAxis( _input_axis_rotateY ) * _input_rotateY_scale, 0 );
 
+		_firstPersonSwayVelocity.y -= _input_rotateY_scale * Input.GetAxis( _input_axis_rotateY );
+		_firstPersonSwayVelocity.x += _input_rotateX_scale * Input.GetAxis( _input_axis_rotateX );
+		_firstPersonSway += _firstPersonSwayVelocity * Time.deltaTime;
+		_firstPersonSwayVelocity +=  _firstPersonSwaySpring * -_firstPersonSway * Time.deltaTime;
+		_firstPersonSwayVelocity *= (1.0f - _firstPersonSwayDamping);
+
 		_rotation_target.y = transform.eulerAngles.y;
-		_rotation_target.x = Mathf.Clamp( _rotation_target.x + -Input.GetAxis( _input_axis_rotateX ) * _input_rotateX_scale, -80, 80 );
+		_rotation_target.x = Mathf.Clamp( _rotation_target.x + -Input.GetAxis( _input_axis_rotateX ) * _input_rotateX_scale, -90, 90 );
+	
+		if ( !this.characterController.isGrounded ) {
+			this.fall_duration += Time.deltaTime;
+		}
 	}
 
 
 	void OnControllerColliderHit(ControllerColliderHit collision) {
-		if ( !this.characterController.isGrounded ) 
-			_position_velocity.y -= this.characterController.velocity.y;
-		_position_velocity = Vector3.ClampMagnitude( _position_velocity, _max_offset_velocity );
+		this._position_velocity.y += this.fall_duration * 2.0f;
+		this.fall_duration = 0;
+		this._position_velocity = Vector3.ClampMagnitude( _position_velocity, _max_offset_velocity );
 	}
 	
 	void LateUpdate () {
@@ -59,7 +78,8 @@ public class FPCamera : MonoBehaviour {
 		// Update the camera transform.
 		_camera.position = transform.TransformPoint( _position_target + _position_offset );
 
-
-		_camera.rotation = Quaternion.Lerp( _camera.rotation, Quaternion.Euler( _rotation_target ), _rotation_speed * Time.deltaTime );
+		_camera.rotation = Quaternion.Euler( _rotation_target );
+	
+		_firstPersonModel.transform.rotation = _camera.rotation * Quaternion.Euler( Vector3.ClampMagnitude(_firstPersonSway, _maxFirstPersonSwayOffset) );
 	}
 }
