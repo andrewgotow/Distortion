@@ -9,6 +9,7 @@ public class SwitchTrigger : MonoBehaviour
 	//public GameObject door2;
 
 	public GameObject[] poweredObjects;
+	public Animator[] poweredLights;
 	private GameObject powerCell;
 
 	//private AudioSource a_src;
@@ -32,6 +33,10 @@ public class SwitchTrigger : MonoBehaviour
  			
 			foreach ( GameObject obj in poweredObjects ) {
 				obj.BroadcastMessage( "SetActive", true, SendMessageOptions.DontRequireReceiver );
+			}
+
+			foreach ( Animator anim in poweredLights ) {
+				anim.SetTrigger ("PoweredOn");
 			}
 
 			powerCell = col.gameObject;
