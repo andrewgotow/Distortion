@@ -6,6 +6,7 @@ public class IntroController : MonoBehaviour {
 	private float timer;
 	public float fadeDuration = 2.0f;
 	private AudioSource audioSrc;
+	public GUIStyle guiBtnSkip;
 
 
 	// Use this for initialization
@@ -16,7 +17,7 @@ public class IntroController : MonoBehaviour {
 	}
 
 	void OnGUI() {
-		if(GUI.Button (new Rect(Screen.width/2.2f,Screen.height/1.15f,100,50), "Skip")) {
+		if(GUI.Button (new Rect(Screen.width/2.51f,Screen.height/1.35f,300,70), "", guiBtnSkip)) {
 			Application.LoadLevel (2);
 		}
 	}

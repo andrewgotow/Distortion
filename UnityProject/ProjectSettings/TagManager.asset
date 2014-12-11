@@ -9,6 +9,7 @@ TagManager:
   - 
   - SpaceScene_Nebula
   - SpaceScene_Planet
+  - Effector
   - 
   Builtin Layer 0: Default
   Builtin Layer 1: TransparentFX

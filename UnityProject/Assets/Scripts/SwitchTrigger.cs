@@ -9,15 +9,14 @@ public class SwitchTrigger : MonoBehaviour
 	//public GameObject door2;
 
 	public GameObject[] poweredObjects;
-	public Animator[] poweredLights;
 	private GameObject powerCell;
-
-	//private AudioSource a_src;
+	/*
+	private AudioSource a_src;
 
 	void Start() {
-		//a_src = GetComponent<AudioSource>();
+		a_src = GetComponent<AudioSource>();
 	}
-
+	*/
 
 	void Update () {
 		if ( powerCell != null ) {
@@ -35,14 +34,8 @@ public class SwitchTrigger : MonoBehaviour
 				obj.BroadcastMessage( "SetActive", true, SendMessageOptions.DontRequireReceiver );
 			}
 
-			foreach ( Animator anim in poweredLights ) {
-				anim.SetTrigger ("PoweredOn");
-			}
-
 			powerCell = col.gameObject;
  			powerCell.rigidbody.isKinematic = true;
-
-			col.enabled = false;
  		}
 		
 		//doorAnimator.SetInteger ("doorAnim", 1);
