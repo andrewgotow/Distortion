@@ -36,6 +36,12 @@ public class CheckpointMgrScript : MonoBehaviour {
 	public void Spawn() {
 		if (player != null) {
 			if(_currentCheckpoint != null) {
+				GameObject[] activeSingularities = GameObject.FindGameObjectsWithTag("Effector");
+				if(activeSingularities.Length > 0) {
+					foreach(GameObject s in activeSingularities) {
+						Destroy (s);
+					}
+				}
 				player.transform.position = _currentCheckpoint.transform.position;
 				gameStateMgr.GetComponent<GameStateManager>().SetPauseMenu (false);
 			}
