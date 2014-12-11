@@ -17,6 +17,7 @@ public class PlayerFire : MonoBehaviour {
 	void Awake () {
 		this._camera = this.gameObject.GetComponentInChildren<Camera>().transform;
 		this.smokeEmitter.enableEmission = false;
+		this.smokeHeatEmitter.enableEmission = false;
 	}
 
 	// Update is called once per frame

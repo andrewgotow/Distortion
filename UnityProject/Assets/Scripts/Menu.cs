@@ -16,7 +16,7 @@ public class Menu : MonoBehaviour {
 	void OnGUI() {
 		if(main_menu) {
 			if(GUI.Button(new Rect(Screen.width/2.5f,Screen.height/2,Screen.width/7,Screen.height/14), "", guiStyleStart)) {
-				Application.LoadLevel (1);
+				Application.LoadLevel ("Intro");
 			}
 			if(GUI.Button(new Rect(Screen.width/2.5f,Screen.height/1.62f,Screen.width/7,Screen.height/14), "", guiStyleControls)) {
 				main_menu = false;

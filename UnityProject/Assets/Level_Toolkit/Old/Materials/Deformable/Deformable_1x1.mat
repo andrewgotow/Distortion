@@ -17,10 +17,21 @@ Material:
         first:
           name: _MainTex
         second:
-          m_Texture: {fileID: 2800000, guid: 4d2d9cedd3b9b444091baaea6026fd68, type: 3}
+          m_Texture: {fileID: 2800000, guid: 1b6c5d0398663412eae93c10acec0ee6, type: 3}
           m_Scale: {x: .25, y: .25}
           m_Offset: {x: .125, y: .125}
+      data:
+        first:
+          name: _EmissiveTex
+        second:
+          m_Texture: {fileID: 0}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
     m_Floats:
+      data:
+        first:
+          name: _StripeSize
+        second: 5
       data:
         first:
           name: _DistortionScale
