@@ -11,6 +11,7 @@ public class PlayerFire : MonoBehaviour {
 	public Animator firstPersonAnimator;
 
 	public ParticleSystem smokeEmitter;
+	public ParticleSystem smokeHeatEmitter;
 
 	// Use this for initialization
 	void Awake () {
@@ -33,6 +34,7 @@ public class PlayerFire : MonoBehaviour {
 				this._singularity = (GameObject)GameObject.Instantiate (this.singularityPrefab, hit.point + hit.normal, Quaternion.LookRotation (hit.normal));
 				AudioSource.PlayClipAtPoint (fire_audio, transform.position);
 				this.smokeEmitter.enableEmission = true;
+				this.smokeHeatEmitter.enableEmission = true;
 			}
 		}
 	}
@@ -42,5 +44,6 @@ public class PlayerFire : MonoBehaviour {
 			this._singularity.SendMessage("DestroyEffector");
 		}
 		this.smokeEmitter.enableEmission = false;
+		this.smokeHeatEmitter.enableEmission = false;
 	}
 }

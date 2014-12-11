@@ -10,10 +10,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Intro.unity
   - enabled: 1
+    path: Assets/Scenes/introScene.unity
+  - enabled: 1
     path: Assets/Scenes/Tutorial.unity
   - enabled: 1
     path: Assets/Scenes/Level01.unity
-  - enabled: 0
-    path: Assets/Scenes/sequence01.unity
-  - enabled: 0
-    path: Assets/Scenes/introScene.unity
+  - enabled: 1
+    path: Assets/Scenes/FinalSequence.unity

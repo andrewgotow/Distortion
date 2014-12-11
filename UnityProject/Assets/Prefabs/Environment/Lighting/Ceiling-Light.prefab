@@ -93,7 +93,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 400010}
-  - 95: {fileID: 9500000}
+  - 114: {fileID: 11400000}
   m_Layer: 0
   m_Name: Ceiling-Light
   m_TagString: Untagged
@@ -313,21 +313,19 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100008}
   m_Mesh: {fileID: 4300000, guid: a0c94b3f1a6ced844969a7756e302e36, type: 3}
---- !u!95 &9500000
-Animator:
-  serializedVersion: 3
+--- !u!114 &11400000
+MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100010}
   m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: a0c94b3f1a6ced844969a7756e302e36, type: 3}
-  m_Controller: {fileID: 9100000, guid: aea245a299c4d0b41b136b92c90e972d, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 1
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e38ac54fa5cc64e48881839da4b092cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isActive: 0
+  speed: 2
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
