@@ -52,12 +52,12 @@ public class SingularityEffector : DeformationEffector {
 		Collider[] others = Physics.OverlapSphere( this.transform.position, this.gravitationalRadius );
 		foreach ( Collider other in others ) {
 			if ( other.tag != "Player" ) {
-				if ( other.rigidbody ) {
+				if ( other.GetComponent<Rigidbody>() ) {
 					Vector3 offsetVec = (this.transform.position - other.transform.position);
 					// there's an issue right now where things will get too close to the center of the singularity, and will move way too fast.
 					// just check that it's not too close here.
 					if ( offsetVec.sqrMagnitude > 1.0f )
-						other.rigidbody.AddForce( GameStateManager.instance.singularityGravityMultiplier * offsetVec.normalized * this.gravitationalForce / Mathf.Min(offsetVec.sqrMagnitude, 1.0f), ForceMode.Acceleration );
+						other.GetComponent<Rigidbody>().AddForce( GameStateManager.instance.singularityGravityMultiplier * offsetVec.normalized * this.gravitationalForce / Mathf.Min(offsetVec.sqrMagnitude, 1.0f), ForceMode.Acceleration );
 				}
 			}
 		}

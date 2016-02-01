@@ -41,9 +41,9 @@ public class FPController : MonoBehaviour {
 
 			if (Input.GetButton("Jump") ) {
 				this.movementVector.y = this.jump_speed;
-				audio.clip = jumpSounds[Random.Range(0,jumpSounds.Length)];
-				audio.pitch = Random.Range( 0.9f, 1.1f );
-				audio.Play();
+				GetComponent<AudioSource>().clip = jumpSounds[Random.Range(0,jumpSounds.Length)];
+				GetComponent<AudioSource>().pitch = Random.Range( 0.9f, 1.1f );
+				GetComponent<AudioSource>().Play();
 			}
 		}
 

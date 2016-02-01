@@ -8,15 +8,15 @@ public class EnvironmentLight : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		this.finalIntensity = this.light.intensity;
+		this.finalIntensity = this.GetComponent<Light>().intensity;
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		if ( this.isActive == false )
-			this.light.intensity = 0;
+			this.GetComponent<Light>().intensity = 0;
 		else
-			this.light.intensity = Mathf.Lerp( this.light.intensity, finalIntensity, 2.0f * Time.deltaTime );
+			this.GetComponent<Light>().intensity = Mathf.Lerp( this.GetComponent<Light>().intensity, finalIntensity, 2.0f * Time.deltaTime );
 	}
 
 	void SetActive ( bool active ) {

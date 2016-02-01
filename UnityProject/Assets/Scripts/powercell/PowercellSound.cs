@@ -20,7 +20,7 @@ public class PowercellSound : MonoBehaviour {
 		float vol = 1.0f;
 		if (col.relativeVelocity.magnitude > 8) {
 			Vector3 normal = col.contacts[0].normal;
-			Vector3 vel = rigidbody.velocity;
+			Vector3 vel = GetComponent<Rigidbody>().velocity;
 			// measure angle
 			float angle = Vector3.Angle (vel, -normal);
 			if(angle > 89.9) {
