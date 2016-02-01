@@ -7,6 +7,10 @@ TagManager:
   - CheckpointManager
   - PowerCell
   - 
+  - SpaceScene_Nebula
+  - SpaceScene_Planet
+  - Effector
+  - 
   Builtin Layer 0: Default
   Builtin Layer 1: TransparentFX
   Builtin Layer 2: Ignore Raycast
@@ -19,7 +23,7 @@ TagManager:
   User Layer 9: Checkpoint
   User Layer 10: FirstPerson
   User Layer 11: Refraction
-  User Layer 12: 
+  User Layer 12: MoonTerrain
   User Layer 13: 
   User Layer 14: 
   User Layer 15: 

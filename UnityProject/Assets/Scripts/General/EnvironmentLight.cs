@@ -1,22 +1,31 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class EnvironmentLight : MonoBehaviour {
 
 	public bool isActive = true;
-	private float finalIntensity = 1.0f;
+	private Dictionary<Light, float> lights = new Dictionary<Light,float>();
 
 	// Use this for initialization
 	void Start () {
-		this.finalIntensity = this.GetComponent<Light>().intensity;
+		Light[] foundLights = this.GetComponentsInChildren<Light> ();
+		foreach (Light light in foundLights) {
+			lights[light] = light.intensity;
+		}
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		if ( this.isActive == false )
-			this.GetComponent<Light>().intensity = 0;
-		else
-			this.GetComponent<Light>().intensity = Mathf.Lerp( this.GetComponent<Light>().intensity, finalIntensity, 2.0f * Time.deltaTime );
+		if (this.isActive == false) {
+			foreach( KeyValuePair<Light, float> light in lights ) {
+				light.Key.intensity = 0;
+			}
+		} else {
+			foreach( KeyValuePair<Light, float> light in lights ) {
+				light.Key.intensity = Mathf.Lerp (light.Key.intensity, light.Value, 2.0f * Time.deltaTime);
+			}
+		}
 	}
 
 	void SetActive ( bool active ) {

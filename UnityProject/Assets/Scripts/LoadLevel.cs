@@ -4,11 +4,11 @@ using System.Collections;
 public class LoadLevel : MonoBehaviour
 {
 	// Defines global variables
-	public int levelNumber;
+	public string levelString;
 	
 	void OnTriggerEnter(Collider other)
 	{
-		Application.LoadLevel (levelNumber);
+		Application.LoadLevel (levelString);
 	}
 
 }

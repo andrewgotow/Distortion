@@ -4,6 +4,7 @@ using System.Collections;
 public class KillPlayer : MonoBehaviour
 {
 	public GameObject checkpointMgr;
+	public bool killNonPlayer = true;
 
 	void Start() {
 		checkpointMgr = GameObject.FindGameObjectWithTag ("CheckpointManager");
@@ -16,7 +17,7 @@ public class KillPlayer : MonoBehaviour
 				checkpointMgr.GetComponent<CheckpointMgrScript> ().Spawn ();
 			else
 				Application.LoadLevel(Application.loadedLevel);
-		} else if(other.gameObject.tag == "PowerCell") {
+		} else if(other.gameObject.tag == "PowerCell" && killNonPlayer) {
 			other.gameObject.GetComponent<Powercell>().ReturnToStartPosition();
 		}
 	}
