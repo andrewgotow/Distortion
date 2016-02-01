@@ -28,14 +28,14 @@ public class SwitchTrigger : MonoBehaviour
 
 	void OnTriggerEnter (Collider col) {
 		if ( col.tag == "PowerCell" ) {
-			audio.Play();
+			GetComponent<AudioSource>().Play();
  			
 			foreach ( GameObject obj in poweredObjects ) {
 				obj.BroadcastMessage( "SetActive", true, SendMessageOptions.DontRequireReceiver );
 			}
 
 			powerCell = col.gameObject;
- 			powerCell.rigidbody.isKinematic = true;
+ 			powerCell.GetComponent<Rigidbody>().isKinematic = true;
  		}
 		
 		//doorAnimator.SetInteger ("doorAnim", 1);
